@@ -39,7 +39,8 @@
 		<td>Excluir</td>
 	</tr>
 
-	<?php while($mostrar=mysqli_fetch_row($result)): ?>
+	<?php while($mostrar=mysqli_fetch_row($result)):
+        ?>
 
 	<tr>
 		<td><?php echo $mostrar[0]; ?></td>

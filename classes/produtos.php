@@ -1,6 +1,29 @@
 <?php 
-	class produtos{
-		public function addImagem($dados){
+class produtos{
+    private $dados;
+    private $idproduto;
+    private $idImg;
+            
+    function getDados() {
+        return $this->dados;
+     }
+    function getIdproduto() {
+        return $this->idproduto;
+    }
+    function getIdImg() {
+        return $this->idImg;
+    }
+    function setDados($dados) {
+        $this->dados = $dados;
+    }
+    function setIdproduto($idproduto) {
+        $this->idcliente = $idproduto;
+    }
+    function setIdImg($idImg) {
+        $this->idImg = $idImg;
+    }
+                    
+            public function addImagem($dados){
 			$c= new conectar();
 			$conexao=$c->conexao();
 

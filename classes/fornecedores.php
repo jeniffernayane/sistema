@@ -1,6 +1,22 @@
 <?php 
 
 class fornecedores{
+    private $dados;
+    private $id;
+    
+    function getDados() {
+        return $this->dados;
+    }
+    function getId() {
+        return $this->id;
+    }
+    function setDados($dados) {
+        $this->dados = $dados;
+    }
+    function setId($id) {
+        $this->id = $id;
+    }
+    
 	public function adicionar($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();

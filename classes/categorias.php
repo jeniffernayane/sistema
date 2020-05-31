@@ -1,11 +1,26 @@
 <?php 
 
 class categorias{
-	public function adicionarCategoria($dados){
+    
+    private $dados;
+    private $idcategoria;
+    
+    function getDados() {
+        return $this->dados;
+    }
+    function getIdcategoria() {
+        return $this->idcategoria;
+    }
+    function setDados($dados) {
+        $this->dados = $dados;
+    }
+    function setIdcategoria($idcategoria) {
+        $this->idcliente = $idcategoria;
+    }
+    
+    public function adicionarCategoria($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
-
-		
 
 		$sql = "INSERT into categorias (id_usuario, nome_categoria, dataCaptura) VALUES ('$dados[0]', '$dados[1]', 
 		   '$dados[2]')";
