@@ -21,7 +21,7 @@ if(isset($_SESSION['usuario'])){
 						<label>Categoria</label>
 						<input type="text" class="form-control input-sm" name="categoria" id="categoria">
 						<p></p>
-                                                <span class="btn btn-primary" id="btnAdicionarCategoria"style="background-color: gray">Adicionar</span>
+                                                <span class="btn btn-primary" id="btnAdicionarCategoria">Adicionar</span>
 					</form>
 				</div>
 				<div class="col-sm-6">

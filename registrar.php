@@ -78,6 +78,7 @@
                     alert("Inserido com Sucesso!!");
 		}else{
                     alert("Erro ao Inserir");
+                    alert(r);
 		}
 		}
 		});

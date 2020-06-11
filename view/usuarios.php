@@ -27,7 +27,7 @@ if(isset($_SESSION['usuario'])){
 						<label>Senha</label>
 						<input type="text" class="form-control input-sm" name="senha" id="senha">
 						<p></p>
-						<span class="btn btn-primary" id="registro" style="background-color: gray" >Salvar</span>
+						<span class="btn btn-primary" id="registro" >Salvar</span>
 
 					</form>
 				</div>

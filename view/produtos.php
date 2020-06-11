@@ -41,7 +41,7 @@ if(isset($_SESSION['usuario'])){
 						<label>Imagem</label>
 						<input type="file" id="imagem" name="imagem">
 						<p></p>
-                                                <span id="btnAddProduto" class="btn btn-primary" style="background-color: gray" >Adicionar</span>
+                                                <span id="btnAddProduto" class="btn btn-primary" >Adicionar</span>
 					</form>
 				</div>
 				<div class="col-sm-8">

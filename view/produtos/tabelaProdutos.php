@@ -1,8 +1,28 @@
 <?php 
-	require_once "../../classes/conexao.php";
+        require_once "../../classes/conexao.php";
 	$c= new conectar();
 	$conexao=$c->conexao();
-	$sql="SELECT pro.nome,
+        
+        if(isset($_POST['buscar'])){
+            $Pesquisa = $_POST['Pesquisa'];
+       
+            $sql="SELECT pro.nome,
+					pro.descricao,
+					pro.quantidade,
+					pro.preco,
+					img.url,
+					cat.nome_categoria,
+					pro.id_produto
+		  from produtos as pro 
+		  inner join imagens as img
+		  on pro.id_imagem=img.id_imagem
+		  inner join categorias as cat
+		  on pro.id_categoria=cat.id_categoria WHERE pro.nome= '%'.$Pesquisa.'%'";
+      
+            $search_result = filterTable($sql);
+            }   
+            else {
+            $sql = "SELECT pro.nome,
 					pro.descricao,
 					pro.quantidade,
 					pro.preco,
@@ -14,16 +34,21 @@
 		  on pro.id_imagem=img.id_imagem
 		  inner join categorias as cat
 		  on pro.id_categoria=cat.id_categoria";
-        
-	$result=mysqli_query($conexao,$sql);
+             $search_result = filterTable($sql);
+            }
+            
+            function filterTable ($sql){
+                $conexao = mysqli_connect("localhost", "root", "", "sistema");
+                $result=mysqli_query($conexao,$sql);
+                    return $result;
+            }
+            
+            ?>
 
- ?>
-
-<form name="searchform" method="post" action="pesquisar.php" >
+<form name="searchform" method="post" >
     <label for="consulta">Buscar:</label>
-  <input type="text" name="buscar" maxlength="255" />
-
-  <input type="submit" value="OK" />
+  <input type="text" name="Pesquisa" />
+  <input type="submit" name="buscar" value="OK" />
 </form>
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
@@ -38,9 +63,7 @@
 		<td>Editar</td>
 		<td>Excluir</td>
 	</tr>
-
-	<?php while($mostrar=mysqli_fetch_row($result)):
-        ?>
+           <?php while($mostrar= mysqli_fetch_array($search_result)): ?>
 
 	<tr>
 		<td><?php echo $mostrar[0]; ?></td>

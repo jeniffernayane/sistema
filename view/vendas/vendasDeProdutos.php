@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 require_once "../../classes/conexao.php";
 	$c= new conectar();

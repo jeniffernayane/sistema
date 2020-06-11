@@ -30,7 +30,7 @@ if(isset($_SESSION['usuario'])){
 						<label>CPF</label>
 						<input type="text" class="form-control input-sm" id="cpf" name="cpf">
 						<p></p>
-						<span class="btn btn-primary" id="btnAdicionarCliente" style="background-color: gray" >Salvar</span>
+						<span class="btn btn-primary" id="btnAdicionarCliente">Salvar</span>
 					</form>
 				</div>
 				<div class="col-sm-8">

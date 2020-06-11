@@ -48,7 +48,7 @@
           <li><a href="vendas.php"><span class="glyphicon glyphicon-usd"></span> Vendas</a>
           </li>
           
-          <li><a href="relatorios.php"><span class="glyphicon glyphicon-list"></span> Compras</a>
+          <li><a href="compras.php"><span class="glyphicon glyphicon-list"></span> Compras</a>
           </li> 
           
           <li class="dropdown" >

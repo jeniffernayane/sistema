@@ -44,7 +44,7 @@
 
 
 
-	//ATUALIZAÇÃO DO ESTOQUE - FEITO NO FINAL DO CURSO
+	//ATUALIZAÇÃO DO ESTOQUE - (Subtração)
 	$quantNova = $quantidade - $quantV;
 	$sqlU = "UPDATE produtos SET quantidade = '$quantNova' where id_produto = '$idproduto' ";
 		mysqli_query($conexao,$sqlU);

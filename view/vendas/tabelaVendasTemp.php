@@ -63,6 +63,6 @@
  <script type="text/javascript">
  	$(document).ready(function(){
  		nome="<?php echo @$cliente ?>";
- 		$('#nomeclienteVenda').text("Nome de cliente: " + nome);
+ 		$('#nomeclienteVenda').text("Nome do cliente: " + nome);
  	});
  </script>
