@@ -31,6 +31,7 @@
 					$dados[4]=$_POST['descricao'];
 					$dados[5]=$_POST['quantidade'];
 					$dados[6]=$_POST['preco'];
+                                        $dados[7]=$_POST['preco_compra'];
 					echo $obj->inserirProduto($dados);
 				}else{
 					echo 0;

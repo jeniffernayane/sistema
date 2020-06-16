@@ -10,6 +10,7 @@
 					pro.descricao,
 					pro.quantidade,
 					pro.preco,
+                                        pro.preco_compra,
 					img.url,
 					cat.nome_categoria,
 					pro.id_produto
@@ -20,12 +21,14 @@
 		  on pro.id_categoria=cat.id_categoria WHERE pro.nome= '%'.$Pesquisa.'%'";
       
             $search_result = filterTable($sql);
+            
             }   
             else {
             $sql = "SELECT pro.nome,
 					pro.descricao,
 					pro.quantidade,
 					pro.preco,
+                                        pro.preco_compra,
 					img.url,
 					cat.nome_categoria,
 					pro.id_produto
@@ -35,6 +38,7 @@
 		  inner join categorias as cat
 		  on pro.id_categoria=cat.id_categoria";
              $search_result = filterTable($sql);
+            
             }
             
             function filterTable ($sql){
@@ -45,7 +49,7 @@
             
             ?>
 
-<form name="searchform" method="post" >
+<form name="searchform" method="post" action="tabelaProdutos.php">
     <label for="consulta">Buscar:</label>
   <input type="text" name="Pesquisa" />
   <input type="submit" name="buscar" value="OK" />
@@ -57,7 +61,8 @@
 		<td>Nome</td>
 		<td>Descrição</td>
 		<td>Quantidade</td>
-		<td>Preço</td>
+		<td>Preço Venda</td>
+                <td>Preço Compra</td>
 		<td>Imagem</td>
 		<td>Categoria</td>
 		<td>Editar</td>
@@ -70,24 +75,25 @@
 		<td><?php echo $mostrar[1]; ?></td>
 		<td><?php echo $mostrar[2]; ?></td>
 		<td>R$ <?php echo $mostrar[3]; ?>,00</td>
+                <td>R$ <?php echo $mostrar[4]; ?>,00</td>
 		<td>
 
 
 
 			<?php 
-			$imgVer=explode("/", $mostrar[4]) ; 
+			$imgVer=explode("/", $mostrar[5]) ; 
 			$imgurl=$imgVer[1]."/".$imgVer[2]."/".$imgVer[3];
 			?>
 			<img width="80" height="80" src="<?php echo $imgurl ?>">
 		</td>
-		<td><?php echo $mostrar[5]; ?></td>
+		<td><?php echo $mostrar[6]; ?></td>
 		<td>
-			<span  data-toggle="modal" data-target="#abremodalUpdateProduto" class="btn btn-warning btn-xs" onclick="addDadosProduto('<?php echo $mostrar[6] ?>')">
+			<span  data-toggle="modal" data-target="#abremodalUpdateProduto" class="btn btn-warning btn-xs" onclick="addDadosProduto('<?php echo $mostrar[7] ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
 			</span>
 		</td>
 		<td>
-			<span class="btn btn-danger btn-xs" onclick="eliminarProduto('<?php echo $mostrar[6] ?>')">
+			<span class="btn btn-danger btn-xs" onclick="eliminarProduto('<?php echo $mostrar[7] ?>')">
 				<span class="glyphicon glyphicon-remove"></span>
 			</span>
 		</td>

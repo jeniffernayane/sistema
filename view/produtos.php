@@ -36,8 +36,10 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="descricao" name="descricao">
 						<label>Quantidade</label>
 						<input type="text" class="form-control input-sm" id="quantidade" name="quantidade">
-						<label>Preço</label>
+						<label>Preço Venda</label>
 						<input type="text" class="form-control input-sm" id="preco" name="preco">
+                                                <label>Preço Compra</label>
+						<input type="text" class="form-control input-sm" id="preco" name="preco_compra">
 						<label>Imagem</label>
 						<input type="file" id="imagem" name="imagem">
 						<p></p>
@@ -81,8 +83,10 @@ if(isset($_SESSION['usuario'])){
 							<input type="text" class="form-control input-sm" id="descricaoU" name="descricaoU">
 							<label>Quantidade</label>
 							<input type="text" class="form-control input-sm" id="quantidadeU" name="quantidadeU">
-							<label>Preço</label>
+							<label>Preço Venda</label>
 							<input type="text" class="form-control input-sm" id="precoU" name="precoU">
+                                                        <label>Preço Compra</label>
+							<input type="text" class="form-control input-sm" id="preco_compraU" name="preco_compraU">
 							
 						</form>
 					</div>
@@ -112,6 +116,7 @@ if(isset($_SESSION['usuario'])){
 					$('#descricaoU').val(dado['descricao']);
 					$('#quantidadeU').val(dado['quantidade']);
 					$('#precoU').val(dado['preco']);
+                                        $('#preco_compraU').val(dado['preco_compra']);
 
 				}
 			});

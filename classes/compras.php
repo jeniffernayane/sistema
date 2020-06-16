@@ -9,7 +9,7 @@ class compras{
 		pro.descricao,
 		pro.quantidade,
 		img.url,
-		pro.preco
+		pro.preco_compra
 		from produtos as pro 
 		inner join imagens as img
 		on pro.id_imagem=img.id_imagem 
@@ -29,7 +29,7 @@ class compras{
 			'descricao' => $ver[1],
 			'quantidade' => $ver[2],
 			'url' => $img,
-			'preco' => $ver[4]
+			'preco_compra' => $ver[4]
 		);		
 		return $dados;
 	}
@@ -37,7 +37,8 @@ class compras{
 	public function criarCompra(){
 		$c= new conectar();
 		$conexao=$c->conexao();
-
+                
+                $idcompra=self::criarComprovante();
 		$data=date('Y-m-d');
 		$dados=$_SESSION['tabelaComprasTemp'];
 		$idusuario=$_SESSION['iduser'];
@@ -45,16 +46,16 @@ class compras{
 
 		for ($i=0; $i < count($dados) ; $i++) { 
 			$d=explode("||", $dados[$i]);
-
-			$sql="INSERT into compras (id_compra,
-							id_fornecedor,
-                                                        id_produto,
-							id_usuario,
-							preco,
-							quantidade,
-							total_venda,
-							dataCompra)
-							values ('$idcompra',
+                        
+                        $sql="INSERT into compras (id_compra,
+                                                    id_fornecedor,
+                                                    id_produto,
+                                                    id_usuario,
+                                                    preco_compra,
+                                                    quantidade,
+                                                    total_compra,
+                                                    dataCompra)
+                                                    values ('$idcompra',
 									'$d[8]',
 									'$d[0]',
 									'$idusuario',
@@ -62,19 +63,28 @@ class compras{
 									'$d[6]',
 									'$d[7]',
 									'$data')";
-
-
-
-
 			
-			$r=$r + $result=mysqli_query($conexao,$sql);
-
-
-
+			$r=$r + $result=mysqli_query($conexao, $sql);
 		}
 
 		return $r;
 	}
+        
+        public function criarComprovante(){
+		$c= new conectar();
+		$conexao=$c->conexao();
+
+		$sql="SELECT id_compra from compras group by id_compra desc";
+
+		$resul=mysqli_query($conexao,$sql);
+		$id=mysqli_fetch_row($resul)[0];
+
+		if($id=="" or $id==null or $id==0){
+			return 1;
+		}else{
+			return $id + 1;
+		}
+        }
 
 	public function nomeFornecedor($idFornecedor){
 		$c= new conectar();
@@ -88,7 +98,7 @@ class compras{
 
 		$ver=mysqli_fetch_row($result);
 
-		return $ver[1]." ".$ver[0];
+		return $ver[0];
 	}
 
 	public function obterTotal($idcompra){

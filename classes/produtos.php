@@ -54,6 +54,7 @@ class produtos{
 										descricao,
 										quantidade,
 										preco,
+                                                                                preco_compra,
 										dataCaptura) 
 							values ('$dados[0]',
 									'$dados[1]',
@@ -62,6 +63,7 @@ class produtos{
 									'$dados[4]',
 									'$dados[5]',
 									'$dados[6]',
+                                                                        '$dados[7]',
 									'$data')";
 			return mysqli_query($conexao,$sql);
 		}
@@ -77,7 +79,7 @@ class produtos{
 						nome,
 						descricao,
 						quantidade,
-						preco 
+						preco, preco_compra 
 				from produtos 
 				where id_produto='$idproduto'";
 			$result=mysqli_query($conexao,$sql);
@@ -90,7 +92,8 @@ class produtos{
 					"nome" => $mostrar[2],
 					"descricao" => $mostrar[3],
 					"quantidade" => $mostrar[4],
-					"preco" => $mostrar[5]
+					"preco" => $mostrar[5],
+                                        "preco_compra" => $mostrar[6]
 						);
 
 			return $dados;
@@ -106,7 +109,8 @@ class produtos{
 										nome='$dados[2]',
 										descricao='$dados[3]',
 										quantidade='$dados[4]',
-										preco='$dados[5]'
+										preco='$dados[5]',
+                                                                                preco_compra='$dados[6]'
 						where id_produto='$dados[0]'";
 
 			return mysqli_query($conexao,$sql);

@@ -15,7 +15,7 @@
  	<tr>
  		<td>Nome</td>
  		<td>Descrição</td>
- 		<td>Preço</td>
+ 		<td>Preço Compra</td>
  		<td>Quantidade</td>
  		<td>Remover</td>
  	</tr>

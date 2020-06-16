@@ -25,7 +25,7 @@
 					<td>Código</td>
 					<td>Data</td>
 					<td>Cliente</td>
-					<td>Total da Compra</td>
+					<td>Total da Venda</td>
 					<td>Comprovante</td>
 					<td>Relatório</td>
 				</tr>

@@ -5,7 +5,7 @@
 	$c= new conectar();
 	$conexao=$c->conexao();
 
-	$objc= new compras();
+	$obj= new compras();
 
 	$sql="SELECT id_compra,
 				dataCompra,

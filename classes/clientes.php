@@ -25,7 +25,7 @@ class clientes{
     function setId($id) {
         $this->id = $id;
     }
-
+    
         public function adicionarCliente($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();

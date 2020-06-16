@@ -9,7 +9,7 @@
 	$descricao=$_POST['descricaoV'];
 	$quantidade=$_POST['quantidadeV'];
 	$quantV=$_POST['quantV'];
-	$preco=$_POST['precoV'];
+	$preco_compra=$_POST['precoV'];
 
 
 
@@ -32,11 +32,11 @@
 	$produto=$idproduto."||".
 				$nomeproduto."||".
 				$descricao."||".
-				$preco."||".
+				$preco_compra."||".
 				$nfornecedor."||".
 				$quantidade."||".
 				$quantV."||".
-				$quantV * $preco."||".
+				$quantV * $preco_compra."||".
 				$idfornecedor;
 
 	$_SESSION['tabelaComprasTemp'][]=$produto;

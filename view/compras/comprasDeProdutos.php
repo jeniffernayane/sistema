@@ -41,7 +41,7 @@ require_once "../../classes/conexao.php";
 			<textarea readonly="" id="descricaoV" name="descricaoV" class="form-control input-sm"></textarea>
 			<label>Quantidade Estoque</label>
 			<input readonly="" type="text" class="form-control input-sm" id="quantidadeV" name="quantidadeV">
-			<label>Preço</label>
+			<label>Preço Compra</label>
 			<input readonly="" type="text" class="form-control input-sm" id="precoV" name="precoV">
 			<label>Quantidade Comprada</label>
 			<input type="text" class="form-control input-sm" id="quantV" name="quantV">
@@ -75,7 +75,7 @@ require_once "../../classes/conexao.php";
 					$('#descricaoV').val(dado['descricao']);
 
 					$('#quantidadeV').val(dado['quantidade']);
-					$('#precoV').val(dado['preco']);
+					$('#precoV').val(dado['preco_compra']);
 					
 					$('#imgProduto').prepend('<img class="img-thumbnail" id="imgp" src="' + dado['url'] + '" />');
 					
