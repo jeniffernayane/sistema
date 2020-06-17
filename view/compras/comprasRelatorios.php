@@ -45,6 +45,11 @@
 						<?php 
 							echo "R$ ".$obj->obterTotal($ver[0]). ",00";
 						 ?>
+                                            <td>
+						<a href="../procedimentos/compras/notaPdf.php?idcompra=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
+							Nota Fiscal <span class="glyphicon glyphicon-file"></span>
+						</a>
+					</td>
 		<?php endwhile; ?>
 			</table>
 		</div>

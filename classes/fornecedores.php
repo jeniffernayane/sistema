@@ -1,21 +1,8 @@
-<?php 
+<?php
+require_once 'pessoas.php';
 
-class fornecedores{
-    private $dados;
-    private $id;
+class fornecedores extends pessoas{
     
-    function getDados() {
-        return $this->dados;
-    }
-    function getId() {
-        return $this->id;
-    }
-    function setDados($dados) {
-        $this->dados = $dados;
-    }
-    function setId($id) {
-        $this->id = $id;
-    }
     
 	public function adicionar($dados){
 		$c = new conectar();

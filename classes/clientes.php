@@ -1,36 +1,21 @@
 <?php 
-//require_once 'controlador.php';
+require_once 'pessoas.php';
 
-class clientes{
-    
-    private $dados;
+class clientes extends pessoas{
     private $idcliente;
-    private $id;
     
-    function getDados() {
-        return $this->dados;
-    }
     function getIdcliente() {
         return $this->idcliente;
     }
-    function getId() {
-        return $this->id;
-    }
-    function setDados($dados) {
-        $this->dados = $dados;
-    }
     function setIdcliente($idcliente) {
         $this->idcliente = $idcliente;
-    }
-    function setId($id) {
-        $this->id = $id;
     }
     
         public function adicionarCliente($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
-		$sql = "INSERT into clientes (id_usuario, nome, sobrenome, endereco, email, telefone, cpf) VALUES ('$dados[0]', '$dados[1]', 
+		$sql = "INSERT into clientes (id_usuario, nome, sobrenome, endereco, email, telefone, cpf) VALUES ('$dados[0]',   '$dados[1]', 
                         '$dados[2]',
                         '$dados[3]',
 			'$dados[4]',

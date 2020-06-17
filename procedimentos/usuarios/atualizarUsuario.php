@@ -6,7 +6,7 @@
 	$obj= new usuarios;
 
 	$dados=array(
-			$_POST['idUsuario'],  
+                    $_POST['idUsuario'],  
 		    $_POST['nomeU'] , 
 		    $_POST['usuarioU'],  
 		    $_POST['emailU']
