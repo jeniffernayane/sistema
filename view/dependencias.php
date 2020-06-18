@@ -7,9 +7,12 @@
 <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../lib/select2/css/select2.css">
 <link rel="stylesheet" type="text/css" href="../css/menu.css">
+<link rel="stylesheet" type="text/css" href="../lib/cdnjs/jquery.quicksearch.js">
 
 <script src="../lib/jquery-3.2.1.min.js"></script>
 <script src="../lib/alertifyjs/alertify.js"></script>
 <script src="../lib/bootstrap/js/bootstrap.js"></script>
 <script src="../lib/select2/js/select2.js"></script>
 <script src="../js/funcoes.js"></script>
+<script src="../lib/cdnjs/jquery.quicksearch.js"></script>
+

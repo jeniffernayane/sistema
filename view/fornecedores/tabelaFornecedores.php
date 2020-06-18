@@ -11,8 +11,16 @@ require_once "../../classes/conexao.php";
 
 ?>
 
+<div class="form-group input-group">
+ <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+ <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">
+</div>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<script>
+$('input#txt_consulta').quicksearch('table#tabela tbody tr');
+</script>
+
+<table id="tabela" class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Fornecedores</label></caption>
 	<tr>
 			<td>Nome</td>

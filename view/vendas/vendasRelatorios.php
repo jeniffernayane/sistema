@@ -19,7 +19,18 @@
 	<div class="col-sm-1"></div>
 	<div class="col-sm-10">
 		<div class="table-responsive">
-			<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+                    
+ 
+<div class="form-group input-group">
+ <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+ <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">
+</div>
+                    
+<script>
+$('input#txt_consulta').quicksearch('table#tabela tbody tr');
+</script>
+
+			<table id="tabela" class="table table-hover table-condensed table-bordered" style="text-align: center;">
 				<caption><label>Vendas</label></caption>
 				<tr>
 					<td>Código</td>
