@@ -5,6 +5,7 @@
 	$c= new conectar();
 	
 	$obj= new compras();
+        
 
 	if(count($_SESSION['tabelaComprasTemp'])==0){
 		echo 0;

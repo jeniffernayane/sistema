@@ -1,91 +1,42 @@
-<?php 
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/compras.php";
+<?php
 
-	$obj= new compras();
+require_once '../../lib/dompdf/autoload.inc.php';
+use Dompdf\Dompdf;
 
+$id=$_GET['idcompra'];
 
-	$c= new conectar();
-	$conexao=$c->conexao();
-	$idcompra=$_GET['idcompra'];
+function file_get_contents_curl($url) {
+    $ch = curl_init();
 
- $sql="SELECT co.id_compra,
-	from compras as co 
-	inner join imagens as ima
-	on co.id_compra=ima.id_imagem
-	and co.id_compra='$idcompra'";
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $url);
 
-$result=mysqli_query($conexao,$sql);
+    $dados = curl_exec($ch);
+    curl_close($ch);
 
-	$ver=mysqli_fetch_row($result);
+    return $dados;
+}
 
-	$comp=$ver[0];
-	$data=$ver[1];
-	$idcliente=$ver[2];
+ $html=file_get_contents("http://localhost/sistema/view/compras/rnotaPdf.php?idcompra=".$id);
 
- ?>	
-
-
- 	<style type="text/css">
-		
-@page {
-            margin-top: 0.3em;
-            margin-left: 0.6em;
-        }
-    body{
-    	font-size: xx-small;
-    }
-	</style>
 
  
- 		<p>Vendas</p>
- 		<p>
- 			Data: 
- 			<?php echo date("d/m/Y", strtotime($data)) ?>
- 		</p>
- 		<p>
- 			Comprovante: <?php echo $comp ?>
- 		</p>
- 		<p>
- 			Cliente: <?php echo $objv->nomeCliente($idcliente); ?>
- 		</p>
- 		
- 		<table style="border-collapse: collapse;" border="1" width="145px">
- 			<tr>
- 				<td>Nome</td>
- 				<td>Preco</td>
- 				<td>Quantidade</td>
- 			</tr>
- 			<?php 
- 				$sql="SELECT ve.id_venda,
-							ve.dataCompra,
-							ve.id_cliente,
-							pro.nome,
-					        pro.preco,
-					        pro.descricao,
-					        ve.quantidade,
-					        ve.total_venda
-						from vendas  as ve 
-						inner join produtos as pro
-						on ve.id_produto=pro.id_produto
-						and ve.id_venda='$idvenda'";
+// Instanciamos um objeto da classe DOMPDF.
+$pdf = new DOMPDF();
+ 
+// Definimos o tamanho do papel e orientação.
+$pdf->set_paper("letter", "portrait");
+//$pdf->set_paper(array(0,0,104,250));
+ 
+// Carregar o conteúdo html.
+$pdf->load_html(utf8_decode($html));
+ 
+// Renderizar PDF.
+$pdf->render();
+ 
+// Enviamos pdf para navegador.
+$pdf->stream('RelatorioCompra.pdf');
 
-				$result=mysqli_query($conexao,$sql);
-				$total=0;
-				while($mostrar=mysqli_fetch_row($result)){
- 			 ?>
- 			<tr>
- 				<td><?php echo $mostrar[3]; ?></td>
- 				<td><?php echo "R$ ".$mostrar[4].",00" ?></td>
- 				<td><?php echo $mostrar[6]; ?></td>
- 			</tr>
- 			<?php
- 				$total=$total + $mostrar[7];
- 				} 
- 			 ?>
- 			 <tr>
- 			 	<td colspan="3">Total: <?php echo "R$ ".$total.",00" ?></td>
- 			 </tr>
- 		</table>
 
- 		
+

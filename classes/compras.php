@@ -119,6 +119,29 @@ class compras{
 
 		return $total;
 	}
-}
+      /*  public function obterIdImg($idcompra){
+			$c= new conectar();
+			$conexao=$c->conexao();
+
+			$sql="SELECT id_imagem 
+					from compras 
+					where id_compra='$idcompra'";
+			$result=mysqli_query($conexao,$sql);
+
+			return mysqli_fetch_row($result)[0];
+		}
+
+		public function obterUrlImagem($idImg){
+			$c= new conectar();
+			$conexao=$c->conexao();
+
+			$sql="SELECT url 
+					from imagens 
+					where id_imagem='$idImg'";
+
+			$result=mysqli_query($conexao,$sql);
+
+			return mysqli_fetch_row($result)[0];
+	*/	}
 
 ?>

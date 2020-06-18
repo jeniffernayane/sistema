@@ -1,7 +1,6 @@
 <?php 
 
 class usuarios{
-    
         public function registroUsuario($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();

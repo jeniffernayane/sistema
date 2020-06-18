@@ -25,7 +25,7 @@ $pdf->load_html(utf8_decode($html));
 $pdf->render();
  
 // Enviamos pdf para navegador.
-$pdf->stream('relatorioVenda.pdf');
+$pdf->stream('comprovanteVenda.pdf');
 
 
 

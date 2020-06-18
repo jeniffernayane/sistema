@@ -26,7 +26,7 @@
 					<td>Data</td>
 					<td>Fornecedor</td>
 					<td>Total da Compra</td>
-                                        <td>Nota Fiscal</td>
+                                        <td>Relatório de compra</td>
 				</tr>
 		<?php while($ver=mysqli_fetch_row($result)): ?>
 				<tr>
@@ -47,7 +47,7 @@
 						 ?>
                                             <td>
 						<a href="../procedimentos/compras/notaPdf.php?idcompra=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
-							Nota Fiscal <span class="glyphicon glyphicon-file"></span>
+							Relatório <span class="glyphicon glyphicon-file"></span>
 						</a>
 					</td>
 		<?php endwhile; ?>

@@ -45,6 +45,7 @@ require_once "../../classes/conexao.php";
 			<input readonly="" type="text" class="form-control input-sm" id="precoV" name="precoV">
 			<label>Quantidade Comprada</label>
 			<input type="text" class="form-control input-sm" id="quantV" name="quantV">
+                        
 			<p></p>
 			<span class="btn btn-primary" id="btnAddCompra">Adicionar</span>
 			<span class="btn btn-danger" id="btnLimparCompras">Limpar Compra</span>
