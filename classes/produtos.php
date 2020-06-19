@@ -30,13 +30,13 @@ class produtos{
 			$data=date('Y-m-d');
 
 			$sql="INSERT into imagens (id_categoria,
-										nome,
-										url,
-										dataUpload)
-							values ('$dados[0]',
-									'$dados[1]',
-									'$dados[2]',
-									'$data')";
+                                                            nome,
+                                                            url,
+                                                            dataUpload)
+                                                            values ('$dados[0]',
+                                                                    '$dados[1]',
+                                                                    '$dados[2]',
+                                                                    '$data')";
 			$result=mysqli_query($conexao,$sql);
 
 			return mysqli_insert_id($conexao);
@@ -48,27 +48,25 @@ class produtos{
 			$data=date('Y-m-d');
 
 			$sql="INSERT into produtos (id_categoria,
-										id_imagem,
-										id_usuario,
-										nome,
-										descricao,
-										quantidade,
-										preco,
-                                                                                preco_compra,
-										dataCaptura) 
+								id_imagem,
+								id_usuario,
+								nome,
+								descricao,
+								quantidade,
+								preco,
+                                                                preco_compra,
+								dataCaptura) 
 							values ('$dados[0]',
-									'$dados[1]',
-									'$dados[2]',
-									'$dados[3]',
-									'$dados[4]',
-									'$dados[5]',
-									'$dados[6]',
-                                                                        '$dados[7]',
-									'$data')";
+								'$dados[1]',
+								'$dados[2]',
+								'$dados[3]',
+								'$dados[4]',
+								'$dados[5]',
+								'$dados[6]',
+                                                                '$dados[7]',
+								'$data')";
 			return mysqli_query($conexao,$sql);
 		}
-
-
 
 		public function obterDados($idproduto){
 			$c= new conectar();
@@ -99,24 +97,20 @@ class produtos{
 			return $dados;
 		}
 
-
-
 		public function atualizar($dados){
 			$c= new conectar();
 			$conexao=$c->conexao();
 
 			$sql="UPDATE produtos set id_categoria='$dados[1]', 
-										nome='$dados[2]',
-										descricao='$dados[3]',
-										quantidade='$dados[4]',
-										preco='$dados[5]',
-                                                                                preco_compra='$dados[6]'
+								nome='$dados[2]',
+								descricao='$dados[3]',
+								quantidade='$dados[4]',
+								preco='$dados[5]',
+                                                                preco_compra='$dados[6]'
 						where id_produto='$dados[0]'";
 
 			return mysqli_query($conexao,$sql);
 		}
-
-
 
 		public function excluir($idproduto){
 			$c= new conectar();
@@ -165,9 +159,7 @@ class produtos{
 			$result=mysqli_query($conexao,$sql);
 
 			return mysqli_fetch_row($result)[0];
-		}
-
-		
+		}	
 	}
 
  ?>

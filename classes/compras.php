@@ -1,7 +1,8 @@
 <?php 
 
 class compras{
-	public function obterDadosProduto($idproduto){
+    
+    public function obterDadosProduto($idproduto){
 		$c= new conectar();
 		$conexao=$c->conexao();
 
@@ -56,13 +57,13 @@ class compras{
                                                     total_compra,
                                                     dataCompra)
                                                     values ('$idcompra',
-									'$d[8]',
-									'$d[0]',
-									'$idusuario',
-									'$d[3]',
-									'$d[6]',
-									'$d[7]',
-									'$data')";
+								'$d[8]',
+                                                                '$d[0]',
+								'$idusuario',
+								'$d[3]',
+								'$d[6]',
+								'$d[7]',
+								'$data')";
 			
 			$r=$r + $result=mysqli_query($conexao, $sql);
 		}
@@ -119,29 +120,6 @@ class compras{
 
 		return $total;
 	}
-      /*  public function obterIdImg($idcompra){
-			$c= new conectar();
-			$conexao=$c->conexao();
-
-			$sql="SELECT id_imagem 
-					from compras 
-					where id_compra='$idcompra'";
-			$result=mysqli_query($conexao,$sql);
-
-			return mysqli_fetch_row($result)[0];
-		}
-
-		public function obterUrlImagem($idImg){
-			$c= new conectar();
-			$conexao=$c->conexao();
-
-			$sql="SELECT url 
-					from imagens 
-					where id_imagem='$idImg'";
-
-			$result=mysqli_query($conexao,$sql);
-
-			return mysqli_fetch_row($result)[0];
-	*/	}
+}
 
 ?>

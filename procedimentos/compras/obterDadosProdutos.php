@@ -1,10 +1,9 @@
 <?php 
-	
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/compras.php";
+require_once "../../classes/conexao.php";
+require_once "../../classes/compras.php";
 
-	$obj= new compras();
+$obj= new compras();
 
-	echo json_encode($obj->obterDadosProduto($_POST['idproduto']));
+echo json_encode($obj->obterDadosProduto($_POST['idproduto']));
 
  ?>

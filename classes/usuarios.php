@@ -1,6 +1,7 @@
 <?php 
 
 class usuarios{
+    
         public function registroUsuario($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
@@ -11,6 +12,7 @@ class usuarios{
 
 		return mysqli_query($conexao, $sql);
     }
+    
         public function login($dados){
                 $c = new conectar();
 		$conexao=$c->conexao();
@@ -32,6 +34,7 @@ class usuarios{
 			return 0;
 		}
 	}
+        
         public function trazerId($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
@@ -42,6 +45,7 @@ class usuarios{
 		$result = mysqli_query($conexao, $sql);
 		return mysqli_fetch_row($result)[0];
 	}
+        
         public function obterDados($idusuario){
 
 		$c = new conectar();
@@ -86,6 +90,7 @@ class usuarios{
 		$sql="DELETE from usuarios 
 					where id='$idusuario'";
 		return mysqli_query($conexao,$sql);
+                
 		}
 	}
 

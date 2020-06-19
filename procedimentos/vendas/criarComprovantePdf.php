@@ -7,9 +7,7 @@ use Dompdf\Dompdf;
 $id=$_GET['idvenda'];
 
 
-
  $html=file_get_contents("http://localhost/sistema/view/vendas/comprovanteVendaPdf.php?idvenda=".$id);
-
 
  
 // Instanciamos um objeto da classe DOMPDF.

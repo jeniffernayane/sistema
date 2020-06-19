@@ -3,7 +3,6 @@ require_once 'pessoas.php';
 
 class fornecedores extends pessoas{
     
-    
 	public function adicionar($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
@@ -21,9 +20,6 @@ class fornecedores extends pessoas{
 
 		return mysqli_query($conexao, $sql);
 	}
-
-
-
 
 	public function obterDados($id){
 		$c = new conectar();
@@ -49,25 +45,19 @@ class fornecedores extends pessoas{
 
 	}
 
-
 	public function atualizar($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
-		
-
 		$sql = "UPDATE fornecedores SET nome = '$dados[1]', razaosocial = '$dados[2]',endereco = '$dados[3]',email = '$dados[4]',telefone = '$dados[5]',cnpj = '$dados[6]' where id_fornecedor = '$dados[0]'";
 
-		
 		echo mysqli_query($conexao, $sql);
 	}
-
 
 	public function excluir($id){
 		$c = new conectar();
 		$conexao=$c->conexao();
 		
-
 		$sql = "DELETE from fornecedores where id_fornecedor = '$id' ";
 
 		return mysqli_query($conexao, $sql);

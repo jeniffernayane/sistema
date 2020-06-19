@@ -1,10 +1,9 @@
 <?php 
+require_once "../../classes/conexao.php";
+require_once "../../classes/usuarios.php";
 
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/usuarios.php";
+$obj= new usuarios;
 
-	$obj= new usuarios;
-
-	echo $obj->excluir($_POST['idusuario']);
+    echo $obj->excluir($_POST['idusuario']);
 
  ?>

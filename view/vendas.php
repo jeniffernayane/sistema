@@ -25,15 +25,6 @@
 		 	<div class="col-sm-12">
 		 		<div id="vendaProdutos"></div>
 		 		<div id="vendasFeitas">
-
-		 			
-<?php 
-
-	
-	//require_once "vendas/vendasRelatorios.php" 
-
-	?>
-
 		 		</div>
 		 	</div>
 		 </div>

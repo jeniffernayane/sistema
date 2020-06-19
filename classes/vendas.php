@@ -1,6 +1,7 @@
 <?php 
 
 class vendas{
+    
 	public function obterDadosProduto($idproduto){
 		$c= new conectar();
 		$conexao=$c->conexao();
@@ -48,29 +49,23 @@ class vendas{
 			$d=explode("||", $dados[$i]);
 
 			$sql="INSERT into vendas (id_venda,
-										id_cliente,
-										id_produto,
-										id_usuario,
-										preco,
-										quantidade,
-										total_venda,
-										dataCompra)
-							values ('$idvenda',
-									'$d[8]',
-									'$d[0]',
-									'$idusuario',
-									'$d[3]',
-									'$d[6]',
-									'$d[7]',
-									'$data')";
-
-
-
-
+                                                    id_cliente,
+                                                    id_produto,
+                                                    id_usuario,
+                                                    preco,
+                                                    quantidade,
+                                                    total_venda,
+                                                    dataCompra)
+                                                    values ('$idvenda',
+                                                                    '$d[8]',
+                                                                    '$d[0]',
+                                                                    '$idusuario',
+                                                                    '$d[3]',
+                                                                    '$d[6]',
+                                                                    '$d[7]',
+                                                                    '$data')";
 			
 			$r=$r + $result=mysqli_query($conexao,$sql);
-
-
 
 		}
 
@@ -92,6 +87,7 @@ class vendas{
 			return $id + 1;
 		}
 	}
+        
 	public function nomeCliente($idCliente){
 		$c= new conectar();
 		$conexao=$c->conexao();

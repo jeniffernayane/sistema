@@ -1,7 +1,6 @@
 <?php 
+session_start();
 
-	session_start();
-
-	unset($_SESSION['tabelaComprasTemp']);
+unset($_SESSION['tabelaComprasTemp']);
 
  ?>

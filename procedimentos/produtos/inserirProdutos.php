@@ -1,17 +1,17 @@
 <?php 
-	session_start();
-	$iduser=$_SESSION['iduser'];
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/produtos.php";
+session_start();
+$iduser=$_SESSION['iduser'];
+require_once "../../classes/conexao.php";
+require_once "../../classes/produtos.php";
 
-	$obj= new produtos();
+$obj= new produtos();
 
-	$dados=array();
+$dados=array();
 	
-	$nomeImg=$_FILES['imagem']['name'];
-	$urlArmazenamento=$_FILES['imagem']['tmp_name'];
-	$pasta='../../arquivos/';
-	$urlFinal=$pasta.$nomeImg;
+$nomeImg=$_FILES['imagem']['name'];
+$urlArmazenamento=$_FILES['imagem']['tmp_name'];
+$pasta='../../arquivos/';
+$urlFinal=$pasta.$nomeImg;
 
 	$dadosImg=array(
 		$_POST['categoriaSelect'],

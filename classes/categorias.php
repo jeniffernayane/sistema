@@ -28,7 +28,6 @@ class categorias{
 		return mysqli_query($conexao, $sql);
 	}
 
-
 	public function atualizarCategoria($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
@@ -39,7 +38,6 @@ class categorias{
 
 		echo mysqli_query($conexao, $sql);
 	}
-
 
 	public function excluirCategoria($idcategoria){
 		$c = new conectar();

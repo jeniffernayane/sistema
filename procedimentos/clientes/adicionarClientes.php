@@ -1,19 +1,10 @@
 <?php 
-
 session_start();
 require_once "../../classes/conexao.php";
 require_once "../../classes/clientes.php";
 
-
-
-
 $idusuario = $_SESSION['iduser'];
-
-
-
 $obj = new clientes();
-
-
 
 $dados=array(
 	$idusuario,

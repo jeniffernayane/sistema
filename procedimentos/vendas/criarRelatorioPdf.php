@@ -20,7 +20,6 @@ function file_get_contents_curl($url) {
 
  $html=file_get_contents("http://localhost/sistema/view/vendas/relatorioVendaPdf.php?idvenda=".$id);
 
-
  
 // Instanciamos um objeto da classe DOMPDF.
 $pdf = new DOMPDF();
