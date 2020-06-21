@@ -1,7 +1,7 @@
 <?php
-require_once 'pessoas.php';
+require_once 'pessoa.php';
 
-class fornecedores extends pessoas{
+class fornecedores extends pessoa{
     
 	public function adicionar($dados){
 		$c = new conectar();

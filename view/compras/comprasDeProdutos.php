@@ -1,10 +1,10 @@
 <?php
-
 require_once "../../classes/conexao.php";
-	$c= new conectar();
-	$conexao=$c->conexao();
-?>
 
+$c= new conectar();
+$conexao=$c->conexao();
+
+?>
 
 <h4>Registrar compra</h4>
 <div class="row">

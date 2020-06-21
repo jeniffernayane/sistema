@@ -1,9 +1,15 @@
 <?php 
+require_once 'controlador.php';
 
-class categorias{
+class categorias implements controlador{
     
     private $dados;
     private $idcategoria;
+    
+    function __construct() {
+        $this->dados="";
+        $this->idcategoria="";
+    }
     
     function getDados() {
         return $this->dados;

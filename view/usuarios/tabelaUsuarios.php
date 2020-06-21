@@ -1,18 +1,17 @@
 <?php 
+require_once "../../classes/conexao.php";
 	
-	require_once "../../classes/conexao.php";
-	$c= new conectar();
-	$conexao=$c->conexao();
+$c= new conectar();
+$conexao=$c->conexao();
 
 	$sql="SELECT id,
-					nome,
-					user,
-					email
-			from usuarios";
-	$result=mysqli_query($conexao, $sql);
+                    nome,
+                    user,
+                    email
+                    from usuarios";
+            $result=mysqli_query($conexao, $sql);
 
  ?>
-
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Usuários :)</label></caption>

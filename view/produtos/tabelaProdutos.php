@@ -1,15 +1,17 @@
 <?php 
-	require_once "../../classes/conexao.php";
-	$c= new conectar();
-	$conexao=$c->conexao();
-	$sql = "SELECT pro.nome,
-					pro.descricao,
-					pro.quantidade,
-					pro.preco,
-                                        pro.preco_compra,
-					img.url,
-					cat.nome_categoria,
-					pro.id_produto
+require_once "../../classes/conexao.php";
+	
+$c= new conectar();
+$conexao=$c->conexao();
+	
+        $sql = "SELECT pro.nome,
+                        pro.descricao,
+			pro.quantidade,
+			pro.preco,
+                        pro.preco_compra,
+			img.url,
+			cat.nome_categoria,
+			pro.id_produto
 		  from produtos as pro 
 		  inner join imagens as img
 		  on pro.id_imagem=img.id_imagem

@@ -1,25 +1,24 @@
 <?php 
+require_once "../../classes/conexao.php";
+require_once "../../classes/compras.php";
 
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/compras.php";
-	$c= new conectar();
-	$conexao=$c->conexao();
+$c= new conectar();
+$conexao=$c->conexao();
 
-	$obj= new compras();
+$obj= new compras();
 
-	$sql="SELECT id_compra,
+            $sql="SELECT id_compra,
 				dataCompra,
 				id_fornecedor 
 			from compras group by id_compra";
-	$result=mysqli_query($conexao,$sql); 
+                $result=mysqli_query($conexao,$sql); 
 	?>
-
 
 <div class="row">
 	<div class="col-sm-1"></div>
 	<div class="col-sm-10">
 		<div class="table-responsive">
-                    
+                    <br>                   
 <div class="form-group input-group">
  <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
  <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">

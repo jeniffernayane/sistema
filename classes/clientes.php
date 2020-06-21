@@ -1,7 +1,7 @@
 <?php 
-require_once 'pessoas.php';
+require_once 'pessoa.php';
 
-class clientes extends pessoas{
+class clientes extends pessoa{
     private $idcliente;
     
     function getIdcliente() {

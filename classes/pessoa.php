@@ -1,6 +1,6 @@
 <?php
 
-class pessoas{
+abstract class pessoa{
     private $dados;
     private $id;
     

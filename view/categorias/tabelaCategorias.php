@@ -1,7 +1,5 @@
 
 <?php 
-
-
 require_once "../../classes/conexao.php";
 	$c = new conectar();
 	$conexao=$c->conexao();
@@ -10,7 +8,6 @@ require_once "../../classes/conexao.php";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
-
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Categorias :D</label></caption>
@@ -35,7 +32,6 @@ require_once "../../classes/conexao.php";
 			</span>
 		</td>
 	</tr>
-
 
 <?php endWhile; ?>
 </table>

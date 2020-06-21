@@ -1,12 +1,10 @@
-
 <?php 
-
-
 require_once "../../classes/conexao.php";
-	$c = new conectar();
-		$conexao=$c->conexao();
 
-	$sql = "SELECT id_fornecedor, nome, razaosocial, endereco, email, telefone, cnpj FROM fornecedores";
+$c = new conectar();
+$conexao=$c->conexao();
+
+    $sql = "SELECT id_fornecedor, nome, razaosocial, endereco, email, telefone, cnpj FROM fornecedores";
 	$result = mysqli_query($conexao, $sql);
 
 ?>

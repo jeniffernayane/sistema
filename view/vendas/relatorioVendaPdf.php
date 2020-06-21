@@ -1,15 +1,13 @@
 <?php 
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/vendas.php";
+require_once "../../classes/conexao.php";
+require_once "../../classes/vendas.php";
 
-	$objv= new vendas();
+$c= new conectar();
+$conexao=$c->conexao();
+$objv= new vendas();
+$idvenda=$_GET['idvenda'];
 
-
-	$c= new conectar();
-	$conexao=$c->conexao();
-	$idvenda=$_GET['idvenda'];
-
- $sql="SELECT ve.id_venda,
+    $sql="SELECT ve.id_venda,
 		ve.dataCompra,
 		ve.id_cliente,
 		pro.nome,
@@ -20,7 +18,7 @@
 	on ve.id_produto=pro.id_produto
 	and ve.id_venda='$idvenda'";
 
-$result=mysqli_query($conexao,$sql);
+        $result=mysqli_query($conexao,$sql);
 
 	$ver=mysqli_fetch_row($result);
 
@@ -29,8 +27,6 @@ $result=mysqli_query($conexao,$sql);
 	$idcliente=$ver[2];
 
  ?>	
-
- 	
 
  	<link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
  
@@ -73,9 +69,9 @@ $result=mysqli_query($conexao,$sql);
 					on ve.id_produto=pro.id_produto
 					and ve.id_venda='$idvenda'";
 
-			$result=mysqli_query($conexao,$sql);
-			$total=0;
-			while($mostrar=mysqli_fetch_row($result)):
+                            $result=mysqli_query($conexao,$sql);
+                            $total=0;
+                            while($mostrar=mysqli_fetch_row($result)):
  			 ?>
 
  			<tr>

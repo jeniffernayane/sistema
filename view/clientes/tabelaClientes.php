@@ -1,13 +1,12 @@
 
 <?php 
-
-
 require_once "../../classes/conexao.php";
-	$c = new conectar();
-		$conexao=$c->conexao();
 
-	$sql = "SELECT id_cliente, nome, sobrenome, endereco, email, telefone, cpf FROM clientes";
-	$result = mysqli_query($conexao, $sql);
+$c = new conectar();
+$conexao=$c->conexao();
+
+    $sql = "SELECT id_cliente, nome, sobrenome, endereco, email, telefone, cpf FROM clientes";
+        $result = mysqli_query($conexao, $sql);
 
 ?>
 
