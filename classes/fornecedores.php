@@ -62,6 +62,14 @@ class fornecedores extends pessoa{
 
 		return mysqli_query($conexao, $sql);
 	}
+        
+        public function obterTodos(){
+		$c = new conectar();
+		$conexao=$c->conexao();
+
+        $sql = "SELECT id_fornecedor, nome, razaosocial, endereco, email, telefone, cnpj FROM fornecedores";
+		return mysqli_query($conexao, $sql);
+	}
 
 }
 

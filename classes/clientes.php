@@ -64,6 +64,13 @@ class clientes extends pessoa{
 
 		return mysqli_query($conexao, $sql);
 	}
+        public function obterTodos(){
+		$c = new conectar();
+		$conexao=$c->conexao();
+
+        $sql = $sql = "SELECT id_cliente, nome, sobrenome, endereco, email, telefone, cpf FROM clientes";
+		return mysqli_query($conexao, $sql);
+	}
 
 }
 

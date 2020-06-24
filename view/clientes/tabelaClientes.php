@@ -1,12 +1,9 @@
 
 <?php 
-require_once "../../classes/conexao.php";
+require_once "../../classes/clientes.php";
 
-$c = new conectar();
-$conexao=$c->conexao();
-
-    $sql = "SELECT id_cliente, nome, sobrenome, endereco, email, telefone, cpf FROM clientes";
-        $result = mysqli_query($conexao, $sql);
+$cliente = new clientes();
+$result = $cliente->obterTodos();
 
 ?>
 

@@ -16,5 +16,6 @@ abstract class pessoa{
     function setId($id) {
         $this->id = $id;
     }
+    abstract public function obterTodos();
 }
 ?>
