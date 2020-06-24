@@ -21,10 +21,10 @@ class categorias implements controlador{
         $this->dados = $dados;
     }
     function setIdcategoria($idcategoria) {
-        $this->idcliente = $idcategoria;
+        $this->idcategoria = $idcategoria;
     }
     
-    public function adicionarCategoria($dados){
+        public function adicionarCategoria($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
@@ -34,7 +34,7 @@ class categorias implements controlador{
 		return mysqli_query($conexao, $sql);
 	}
 
-	public function atualizarCategoria($dados){
+        public function atualizarCategoria($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
